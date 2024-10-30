@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AlfredAI</title>
+    <style>
+        body {
+            background-color: #000000;
+            /* This is a light grey color */
+        }
+
+        h2 {
+            font-family: Arial;
+            color: #ffffff;
+            font-size: 35px;
+            /* Change this to your desired color */
+        }
+
+        ul#chat-history {
+            list-style: none;
+            padding: 10;
+            margin: 0;
+        }
+
+        ul#chat-history {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .user-message {
+            align-self: flex-end;
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            max-width: 70%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .chatbot-response {
+            align-self: flex-start;
+            background-color: #a4d5f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            max-width: 70%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+
+
+        input[type="text"] {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 80%;
+        }
+
+        button[type="submit"] {
+            padding: 20px 40px;
+            background-color: #1269a7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <center><h2 style="font-family: Arial">AlfredAI</h2></center>
+    <center><img src="{{ url_for('static', filename='spin.gif') }}" width="350" height="250" style="margin-bottom: 30px;"></center>
+    <ul id="chat-history"></ul>
+    <center>
+        <form method="POST" action="/chat">
+            <input type="text" name="user_message" placeholder="Type your message" style="margin-top: 30px;">
+            <button type="submit">Send</button>
+        </form>
+    </center>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <center>
+        <script>
+            $(document).ready(function () {
+                $('form').submit(function (event) {
+                    event.preventDefault();
+                    var userMessage = $('input[name="user_message"]').val();
+                    $('#chat-history').append('<li class="user-message">' + userMessage + '</li>');
+                    $('input[name="user_message"]').val('');
+    
+                    $.ajax({
+                        type: 'POST',
+                        url: '/chat',
+                        data: { user_message: userMessage },
+                        success: function (response) {
+                            $('#chat-history').append('<li class="chatbot-response">' + response + '</li>');
+                        }
+                    });
+                });
+            });
+        </script>
+    </center>
+</body>
+
+</html>

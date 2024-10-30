@@ -1,0 +1,270 @@
+[
+  {
+    "name": "pull_from_memory",
+    "description": "Run this when the user wants something you dont know or when you need to 'remember' something. this allows you to scan through your memory and storage to look for data. this includes finding emails - if a person is said that the user wants to email, check your memory first. it returns a dictionary so use the data from the dictionary to figure it out"
+  },
+  {
+    "name": "get_time_and_date",
+    "description": "run when you need to know the exact date OR time of the current day"
+  },
+  {
+    "name": "check_emails",
+    "description": "run when the user needs a briefing on their unread emails. DO NOT LIST THEM! SUMMARIZE THEM. DO NOT BOLD/ITALICISE"
+  },
+  {
+    "name": "send_email",
+    "description": "Run this when the user wants to send an email to someone. DO NOT ADD ANY QUOTATIONS!",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "type": "string",
+          "description": "DO NOT ADD ANY QUOTATIONS! The message body goes here. generate it or put in what the user said here. when you put it in make sure it has proper grammar."
+        },
+        "recipient": {
+          "type": "string",
+          "description": "The email for the recipient goes here. The default is hfbledsoe@gmail.com. If no @company.com is mentioned, assume it is @gmail.com. also, if the user says example AT yahoo.com, add the @ symbol automatically. Example: tgbledsoe07 at gmail.com would be tgbledsoe@gmail.com"
+        },
+        "subject": {
+          "type": "string",
+          "description": "This is where the subject of the email would go. If no subject is provided, simply put 'AlfredAI Message'."
+        }
+      },
+      "required": [
+        "body",
+        "recipient"
+      ]
+    }
+  },
+  {
+    "name": "get_health_data",
+    "description": "Run this when the user wants to know about their health data. WITH ANYTHING ABOUT HARPERS HEALTH, USE THIS! You are able to access the most recent due to being connected to an Oura Ring.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "date_for_data": {
+          "type": "string",
+          "description": "default this as the date of today. But, if the user wants to specify a certain date to pull the data from, put it here. use format 'YYYY-MM-DD' when putting in the date"
+        }
+      },
+      "required": [
+        "date_for_data"
+      ]
+    }
+  },
+  {
+    "name": "change_audio_setting",
+    "description": "Run this when the user wants to mute or unmute you. it could be a phrase they say, or it could just be a simple 'mute' or 'unmute'",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "audio_enabled": {
+          "type": "boolean",
+          "description": "this is where you would change the audioEnabled variable. if the variable is True, the audio is unmuted. if the variable is false, the audio is muted."
+        }
+      },
+      "required": [
+        "audio_enabled"
+      ]
+    }
+  },
+  {
+    "name": "message_plant_system",
+    "description": "run this function whenever the user wants to control their plant system, water their plant, or turn on/off the UV light. this sends a command to another raspberry pi that keeps the plant alive.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "type": "string",
+          "description": "put in the command here. if the user wants to turn on the light, put in 'elight'. if the user wants to turn off the light, put in 'dlight'. if the user wants to water the plant, put in 'ewater'."
+        }
+      },
+      "required": [
+        "command"
+      ]
+    }
+  },
+  {
+    "name": "get_email_body",
+    "description": "Run this you need to pull the body out of an email. this uses the subject to search for the email.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "subject": {
+          "type": "string",
+          "description": "the subject of the email needed goes here. put in in the EXACT way it was extracted."
+        }
+      },
+      "required": [
+        "subject"
+      ]
+    }
+  },
+  {
+    "name": "save_task",
+    "description": "Run this when the user wants to save a task or reminder. it is like a todo list or things they need to do. save all 3 arguments with just a space in between them - no extra words",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "type": "string",
+          "description": "the task/reminder goes here. put it in a simple, easy to read format"
+        },
+        "time_and_date_due": {
+          "type": "string",
+          "description": "this is where the date and time to alert the user of the reminder goes. pass the variable as 'YYYY-MM-DD HH:MM'. If no time is specified, insert the time as noon (12PM) (However, if the date they want is today, the time you must put it should be after the current time). if no date is specified, use tomorrows date."
+        }
+      },
+      "required": [
+        "body",
+        "time_and_due_date"
+      ]
+    }
+  },
+  {
+    "name": "web_scrape",
+    "description": "Run this when you require public, RECENT information on the internet. this allows you to search google. it returns the top result - summarize it in a few sentences",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "type": "string",
+          "description": "the query to send to google goes here"
+        }
+      },
+      "required": [
+        "body"
+      ]
+    }
+  },
+  {
+    "name": "list_tasks",
+    "description": "Run this when the user wants to view their list of tasks or reminders. this is like their todo list. you can also search by date if needed.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "date_to_search": {
+          "type": "string",
+          "description": "this is where the date and time to alert the user of the reminder goes. pass the variable as 'YYYY-MM-DD HH:MM:SS'"
+        },
+        "wants_all_reminders": {
+          "type": "boolean",
+          "description": "this is usually false. however, if the user specified that they want ALL of their reminders listed, set this to True."
+        }
+      }
+    }
+  },
+  {
+    "name": "remove_task",
+    "description": "Run this when the user wants to remove or check off one of their tasks/reminders. this is on their todo list",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_to_remove": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The tasks/reminders names go here. If the user provides names that are close to tasks mentioned, name the tasks you think they want and ask for confirmation."
+        }
+      },
+      "required": [
+        "task_to_remove"
+      ]
+    }
+  },
+  {
+    "name": "search_for_files",
+    "description": "Run this when you need to search for files on the system for data or anything that could be in your storage. the format for displaying the file names shouldn't be the path, (Ex. /home/harpbled/dataStorage/tasks.txt) but should just be the filename, like 'tasks'. if the user provides a name that is close to one of the files mentioned, name the file you think they want and ask for confirmation",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "openSpecificFile": {
+          "type": "boolean",
+          "description": "this should always be false UNLESS the user has already told you what file they want to open"
+        }
+      },
+      "required": [
+        "openSpecificFile"
+      ]
+    }
+  },
+  {
+    "name": "open_file",
+    "description": "run this when the user wants to view the contents of that memory/storage/file. always save files in one word or with underscores and all lowercase with a .txt extension",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "file_to_open": {
+          "type": "string",
+          "description": "the file name that is being looked for goes here. if the user provides a name that is close to one of the files that is present, name that and ask for confirmation"
+        }
+      },
+      "required": [
+        "file_to_open"
+      ]
+    }
+  },
+  {
+    "name": "edit_file",
+    "description": "ONLY JSON FILES! run this when the user wants to add something to a file, note, or something in STORAGE. The storage is in a .json format. if the information is about harper, add it to the about_harper.json file. ONLY FOR FILES! if you are going to save a new file, ALWAYS ADD THE .JSON TO THE END OF THE FILE",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "file_to_edit": {
+          "type": "string",
+          "description": "the file name that is being edited goes here. if the user provides a name that is close to one of the files that is present, name that and ask for confirmation. if you are being taught an action or how to do something, this should be learned_stuff.json"
+        },
+        "item_to_add": {
+          "type": "string",
+          "description": "this is the place where the stuff that needs to be added to the file/note/storage should go"
+        },
+        "place_to_add": {
+          "type": "string",
+          "description": "This defaults to 'content'. This is the organization location in the JSON file that the content should go. If the file that you want to modify has what seems to be a better location than 'content', put that here."
+        },
+        "needs_new_file": {
+          "type": "boolean",
+          "description": "After scanning through all files, if there are no files that are close to the file the user wants (or if they just want the new file) this should be turned to true. However, this defaults to false because usually the file is there."
+        },
+        "about_description": {
+          "type": "string",
+          "description": "this is only needed if it was determined if needs_new_file is True. If we do need a new file, put in a new description here of the content in this file and that will go in the 'about' section at the top of the json file."
+        }
+      },
+      "required": [
+        "file_to_edit",
+        "item_to_add"
+      ]
+    }
+  },
+  {
+    "name": "remove_item_from_file",
+    "description": "run this when the user wants to remove something from a file in your storage. ALWAYS ADD .JSON TO THE END OF THE FILE NAME",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "file_to_edit": {
+          "type": "string",
+          "description": "the file name that is being edited goes here. if the user provides a name that is close to one of the files that is present, name that and ask for confirmation. ALWAYS ADD .JSON TO THE END OF THE FILE NAME"
+        },
+        "item_to_remove": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "items that the user wants to remove. if the user provides a name that is close to one of the items that is present, name that and ask for confirmation."
+        },
+        "item_list_key": {
+          "type": "string",
+          "description": "the default for this should be 'content'. This is the organization location in the JSON file that the content should go. If the file that you want to modify has what seems to be a better location than 'content', put that here."
+        }
+      },
+      "required": [
+        "file_to_edit",
+        "item_to_remove",
+        "item_list_key"
+      ]
+    }
+  }
+]
