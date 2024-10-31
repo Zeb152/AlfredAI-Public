@@ -1,14 +1,27 @@
 # AlfredAI
 
 Physical (Version 2) of AlfredAI was started on August 11, 2024.
+This repository was made from a private repository, so the dates for the new features here may be off from when they were actually implemented.
 
-## About
+# About
 
 Alfed is an AI built by Harper Bledsoe which uses the OpenAI API in order to be an LLM. However, the OpenAI API is just the framework that the bot is built from. The chatbot has custom built commands which interact with the API in order to accomplish tasks.
 
 The bot is built with modularity and customization in mind. The main script, alfredBrain.py is a class which has functions in it. These functions all contain the abilities he has. So, you could program whatever input device you desire, such as a microphone/speaker, SMS input, or something else and just reference the Brain and it will handle the task.
 
-## Alfred's callable abilities:
+# Libraries Used (to be continued)
+
+## OpenAI
+
+[API Reference](https://platform.openai.com/docs/api-reference/introduction?lang=python)
+
+The main library used for LLM response and AI features. 
+To install, run:
+```
+pip install openai
+```
+
+# Alfred's callable abilities:
 
 **_abilities list updated as of 8/19/24_**
 
@@ -127,7 +140,7 @@ This is the main code in order to get a response from the chatbot. You can simpl
 getChatbotResp(Requires: String UserInput Message)
 ```
 
-## Determining whether the bot called a function
+# Determining whether the bot called a function
 
 The code to do this can be simplified to:
 
@@ -144,7 +157,7 @@ else:
 
 This is because the content of an OpenAI Completion Response is None if it decides to call a function. However, if it doesn't call a function, the output is not empty so you can call the .content of it.
 
-## Design
+# Design
 
 All of the functionality of Alfred is built into his brain. This is the AlfredBrain.py script. In it, there is an Alfred Brain class which holds all of the capabilities of Alfred listed above. The Brain **IS** Alfred. So basically, every other python script that uses Alfred just calls the Brain. It is build with simplicity and modularity.
 
