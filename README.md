@@ -21,6 +21,30 @@ To install, run:
 pip install openai
 ```
 
+## PathLib, OS, Sys, Json
+
+API References:
+- [PathLib](https://docs.python.org/3/library/pathlib.html)
+- [OS](https://docs.python.org/3/library/os.html)
+- [Sys](https://docs.python.org/3/library/sys.html)
+- [Json](https://docs.python.org/3/library/json.html)
+
+Allows navigation through files, directories, and the system itself.
+To install, run:
+```
+pip install pathlib
+```
+The rest of the libraries above listed are built in.
+
+## SMTPlib
+
+API Reference:
+[SMTPlib](https://docs.python.org/3/library/smtplib.html)
+
+Allows messaging through emails.
+This library is automatically installed in Python.
+
+
 # Alfred's callable abilities:
 
 **_abilities list updated as of 8/19/24_**
