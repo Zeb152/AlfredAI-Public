@@ -11,8 +11,8 @@ The bot is built with modularity and customization in mind. The main script, alf
 
 # Table of Contents
 - [Libraries Used](#Libraries-Used)
-    - [PathLib, OS, Sys, Json](##PathLib,-OS,-Sys,-Json)
-    - [SMTPlib](##SMTPlib)
+    - [PathLib, OS, Sys, Json](#PathLib,-OS,-Sys,-Json)
+    - [SMTPlib](#SMTPlib)
 - [Calleable Abilities](#Callable-Abilities)
 
 # Libraries Used
