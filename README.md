@@ -9,7 +9,11 @@ Alfed is an AI built by Harper Bledsoe which uses the OpenAI API in order to be 
 
 The bot is built with modularity and customization in mind. The main script, alfredBrain.py is a class which has functions in it. These functions all contain the abilities he has. So, you could program whatever input device you desire, such as a microphone/speaker, SMS input, or something else and just reference the Brain and it will handle the task.
 
-# Libraries Used (to be continued)
+# Table of Contents
+- [Libraries Used](#Libraries-Used)
+- [Calleable Abilities](#Callable-Abilities)
+
+# Libraries Used
 
 ## OpenAI
 
@@ -38,14 +42,28 @@ The rest of the libraries above listed are built in.
 
 ## SMTPlib
 
-API Reference:
-[SMTPlib](https://docs.python.org/3/library/smtplib.html)
+[API Reference](https://docs.python.org/3/library/smtplib.html)
 
 Allows messaging through emails.
 This library is automatically installed in Python.
 
+## SSL
 
-# Alfred's callable abilities:
+[API Reference](https://docs.python.org/3/library/ssl.html)
+Allows securing connections with sockets.
+
+## Pygame
+
+[API Reference](https://www.pygame.org/docs/)
+Controls everything related to volume, such as speaking MP3 files (text to speech).
+
+To install, run:
+```
+pip install pygame
+```
+
+
+# Callable Abilities:
 
 **_abilities list updated as of 8/19/24_**
 
