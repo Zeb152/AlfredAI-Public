@@ -11,7 +11,7 @@ The bot is built with modularity and customization in mind. The main script, alf
 
 # Table of Contents
 - [Libraries Used](#Libraries-Used)
-    - [PathLib, OS, Sys, Json](#PathLib,-OS,-Sys,-Json)
+    - [PathLib, OS, Sys, Json](#system-libraries)
     - [SMTPlib](#SMTPlib)
 - [Calleable Abilities](#Callable-Abilities)
 
@@ -27,7 +27,7 @@ To install, run:
 pip install openai
 ```
 
-## PathLib, OS, Sys, Json
+## System Libraries
 
 API References:
 - [PathLib](https://docs.python.org/3/library/pathlib.html)
