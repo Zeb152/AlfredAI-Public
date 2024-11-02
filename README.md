@@ -55,13 +55,14 @@ This library is automatically installed in Python.
 ## SSL
 
 [API Reference](https://docs.python.org/3/library/ssl.html)
+
 Allows securing connections with sockets.
 
 ## Pygame
 
 [API Reference](https://www.pygame.org/docs/)
-Controls everything related to volume, such as speaking MP3 files (text to speech).
 
+Controls everything related to volume, such as speaking MP3 files (text to speech).
 To install, run:
 ```
 pip install pygame
