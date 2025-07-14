@@ -175,8 +175,8 @@ messagePlantSystem(String: msgCommand)
 webScrape(String: userInput)
 ```
 
-Acts on the request to call a function. After finding out that the LLM called a function, you can run this and the Brain will figure out what function the AI wants to call and will execute it. This returns a string reply from the chatbot.
-`NOTE: determining whether the LLM called a function or not must be written in your own code. Examples of this is shown below about how to implement it.`
+Acts on the request to call a function. After finding out that the LLM called a function, you can run this, and the Brain will figure out what function the AI wants to call and will execute it. This returns a string reply from the chatbot.
+`NOTE: Determining whether the LLM called a function or not must be written in your own code. Examples of this are shown below about how to implement it.`
 
 ```
 actOnFunctionCall(Requires: OpenAI.completion Response (output), String UserInput)
@@ -207,7 +207,7 @@ This is because the content of an OpenAI Completion Response is None if it decid
 
 # Design
 
-All of the functionality of Alfred is built into his brain. This is the AlfredBrain.py script. In it, there is an Alfred Brain class which holds all of the capabilities of Alfred listed above. The Brain **IS** Alfred. So basically, every other python script that uses Alfred just calls the Brain. It is build with simplicity and modularity.
+All of the functionality of Alfred is built into his brain. This is the AlfredBrain.py script. In it, there is an Alfred Brain class that holds all of the capabilities of Alfred listed above. The Brain **IS** Alfred. So basically, every other Python script that uses Alfred just calls the Brain. It is built with simplicity and modularity.
 
 ### Example workflow:
 
