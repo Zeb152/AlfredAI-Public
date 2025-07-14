@@ -175,14 +175,14 @@ messagePlantSystem(String: msgCommand)
 webScrape(String: userInput)
 ```
 
-Acts on the request to call a function. After finding out that the LLM called a function, you can run this, and the Brain will figure out what function the AI wants to call and will execute it. This returns a string reply from the chatbot.
+18. Acts on the request to call a function. After finding out that the LLM called a function, you can run this, and the Brain will figure out what function the AI wants to call and will execute it. This returns a string reply from the chatbot.
 `NOTE: Determining whether the LLM called a function or not must be written in your own code. Examples of this are shown below about how to implement it.`
 
 ```
 actOnFunctionCall(Requires: OpenAI.completion Response (output), String UserInput)
 ```
 
-This is the main code in order to get a response from the chatbot. You can simply call this with your message.
+19. This is the main code in order to get a response from the chatbot. You can simply call this with your message.
 
 ```
 getChatbotResp(Requires: String UserInput Message)
