@@ -13,7 +13,7 @@ The bot is built with modularity and customization in mind. The main script, alf
 - [Libraries Used](#Libraries-Used)
     - [System Libraries](#system-libraries)
     - [SMTPlib](#SMTPlib)
-- [Calleable Abilities](#Callable-Abilities)
+- [Callable Abilities](#Callable-Abilities)
 - [Determining whether the bot called a function](#determining-whether-the-bot-called-a-function)
 - [Design](#design)
   
