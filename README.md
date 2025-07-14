@@ -11,7 +11,9 @@ The bot is built with modularity and customization in mind. The main script, alf
 
 # Table of Contents
 - [Libraries Used](#Libraries-Used)
-    - [System Libraries](#system-libraries)
+    - [OpenAI](#OpenAI)
+    - [Preinstalled Python 3 Libraries](#Preinstalled-Python-3-Libraries)
+    - [PathLib](#PathLib)
     - [SMTPlib](#SMTPlib)
 - [Callable Abilities](#Callable-Abilities)
 - [Determining whether the bot called a function](#determining-whether-the-bot-called-a-function)
