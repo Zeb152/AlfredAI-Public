@@ -30,43 +30,79 @@ To install, run:
 pip install openai
 ```
 
-## System Libraries
-
-API References:
-- [PathLib](https://docs.python.org/3/library/pathlib.html)
+## Preinstalled Python 3 Libraries
 - [OS](https://docs.python.org/3/library/os.html)
 - [Sys](https://docs.python.org/3/library/sys.html)
 - [Json](https://docs.python.org/3/library/json.html)
+- [Datetime](https://docs.python.org/3/library/datetime.html)
+- [Time](https://docs.python.org/3/library/time.html)
+- [Subprocess](https://docs.python.org/3/library/subprocess.html)
+- [http.client](https://docs.python.org/3/library/http.client.html)
+- [urllib](https://docs.python.org/3/library/urllib.html)
+
+
+## PathLib
+
+[Documentation](https://docs.python.org/3/library/pathlib.html)
 
 Allows navigation through files, directories, and the system itself.
 To install, run:
 ```
 pip install pathlib
 ```
-The rest of the libraries above listed are built in.
 
 ## SMTPlib
 
-[API Reference](https://docs.python.org/3/library/smtplib.html)
+[Documentation](https://docs.python.org/3/library/smtplib.html)
 
 Allows messaging through emails.
 This library is automatically installed in Python.
 
 ## SSL
 
-[API Reference](https://docs.python.org/3/library/ssl.html)
+[Documentation](https://docs.python.org/3/library/ssl.html)
 
 Allows securing connections with sockets.
 
 ## Pygame
 
-[API Reference](https://www.pygame.org/docs/)
+[Documentation](https://www.pygame.org/docs/)
 
-Controls everything related to volume, such as speaking MP3 files (text to speech).
+Controls everything related to volume, such as speaking the TTS (.wav) files.
 To install, run:
 ```
 pip install pygame
 ```
+
+## Langchain
+
+[Documentation](https://python.langchain.com/docs/integrations/tools/google_search/)
+
+Enables Google searching to find information.
+
+## IMAPlib
+
+[Documentation](https://docs.python.org/3/library/imaplib.html)
+
+Adds ability to check the inbox of a certain email with the given username and password.
+
+## Pushsafer
+
+[Documentation](https://www.pushsafer.com/)
+
+Allows Python to send a push notification to a specified device via a mobile app.
+
+## Google Cloud (Firestore, Pubsub)
+
+[Documentation](https://cloud.google.com/python/docs/reference)
+
+Adds the ability to store information in a cloud database instead of on-device.
+
+## Paho MQTT
+
+[Documentation](https://eclipse.dev/paho/files/paho.mqtt.python/html/client.html)
+
+Allows MQTT messaging from the Raspberry Pi to other devices.
 
 
 # Callable Abilities:
